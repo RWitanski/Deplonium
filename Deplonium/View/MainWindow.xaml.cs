@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 
 namespace Deplonium
 {
+    using Model;
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -22,7 +23,13 @@ namespace Deplonium
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();    
+            
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            CbxServiceInstanceType.ItemsSource = Enum.GetValues(typeof(ServiceTypes)).Cast<ServiceTypes>();
         }
     }
 }
